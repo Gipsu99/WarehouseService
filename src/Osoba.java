@@ -17,19 +17,10 @@ public class Osoba implements Serializable {
     private int rok;
     private int admin;
     private boolean remont;
+    List<Pomieszczenia> listaPomieszczen = new ArrayList<>();
+    List<Osoba> listaOsob = new ArrayList<>();
 
 
-
-    public Osoba(String imie, String nazwisko, String pesel, String adres, String dataUrodzenia, int dzien, int miesiac, int rok) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
-        this.pesel = pesel;
-        this.adres = adres;
-        this.dataUrodzenia = dataUrodzenia;
-        this.dzien = dzien;
-        this.miesiac = miesiac;
-        this.rok = rok;
-    }
     public Osoba(String imie, String nazwisko, String pesel, String adres, String dataUrodzenia, int admin) {
         this.imie = imie;
         this.nazwisko = nazwisko;
@@ -39,13 +30,7 @@ public class Osoba implements Serializable {
         this.admin = admin;
     }
 
-    public Osoba(String imie, String nazwisko, String pesel, String adres, String dataUrodzenia) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
-        this.pesel = pesel;
-        this.adres = adres;
-        this.dataUrodzenia = dataUrodzenia;
-    }
+
 
     public Osoba() {
     }
@@ -66,9 +51,6 @@ public class Osoba implements Serializable {
         return adres;
     }
 
-    public String getDataPierwszegoNajmu() {
-        return dataPierwszegoNajmu;
-    }
 
     public String getDataUrodzenia() {
         return dataUrodzenia;
@@ -98,10 +80,7 @@ public class Osoba implements Serializable {
         }
     }
 
-    List<Pomieszczenia> listaPomieszczen = new ArrayList<>();
 
-
-List<Osoba> listaOsob = new ArrayList<>();
 
     public List<Osoba> getListaOsob() {
         return listaOsob;
@@ -120,42 +99,42 @@ List<Osoba> listaOsob = new ArrayList<>();
     }
 
 
-public void wynajmij(Pomieszczenia pomieszczenia) {
+    public void wynajmij(Pomieszczenia pomieszczenia) {
 
-    if(pomieszczenia.isWynajete() == false) {
-        if (dzien == 0 && miesiac == 0 && rok == 0) {
-            boolean set = false;
-            int a, b, c, d;
-            do {
-                try {
-                    do {
-                        System.out.print("Podaj datę wynajmu DDMMRRRR, pamiętaj, że mamy rok 2020: ");
-                        Scanner sc = new Scanner(System.in);
-                        a = sc.nextInt();
-                        b = sc.nextInt();
-                        c = sc.nextInt();
-                        dzien = a;
-                        miesiac = b;
-                        rok = c;
-                        if (a > 0 || b > 0 || c > 0) {
-                            set = true;
-                        }
-                    } while (a <= 0 || a > 31 || b <= 0 || b > 12 || c != 2020);
-                } catch (InputMismatchException e) {
-                    System.err.println("to nie jest liczba");
-                    set = false;
-                }
-            } while (set == false);
-            listaPomieszczen.add(pomieszczenia);
-            pomieszczenia.setWynajete(true);
+        if(pomieszczenia.isWynajete() == false) {
+            if (dzien == 0 && miesiac == 0 && rok == 0) {
+                boolean set = false;
+                int a, b, c, d;
+                do {
+                    try {
+                        do {
+                            System.out.print("Podaj datę wynajmu DDMMRRRR, pamiętaj, że mamy rok 2020: ");
+                            Scanner sc = new Scanner(System.in);
+                            a = sc.nextInt();
+                            b = sc.nextInt();
+                            c = sc.nextInt();
+                            dzien = a;
+                            miesiac = b;
+                            rok = c;
+                            if (a > 0 || b > 0 || c > 0) {
+                                set = true;
+                            }
+                        } while (a <= 0 || a > 31 || b <= 0 || b > 12 || c != 2020);
+                    } catch (InputMismatchException e) {
+                        System.err.println("to nie jest liczba");
+                        set = false;
+                    }
+                } while (set == false);
+                listaPomieszczen.add(pomieszczenia);
+                pomieszczenia.setWynajete(true);
+            } else {
+                pomieszczenia.setWynajete(true);
+                listaPomieszczen.add(pomieszczenia);
+            }
         } else {
-            pomieszczenia.setWynajete(true);
-            listaPomieszczen.add(pomieszczenia);
+            System.err.println("Te pomieszczenie jest zajęte.");
         }
-    } else {
-        System.err.println("Te pomieszczenie jest zajęte.");
     }
-}
 
 
 

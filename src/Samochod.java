@@ -10,11 +10,7 @@ public class Samochod extends Przedmiot {
         this.powierzchnia = powierzchnia;
         this.cecha = cecha;
     }
-    public Samochod(String nazwa, String cecha) {
-        super(nazwa);
-        this.nazwa = nazwa;
-        this.cecha = cecha;
-    }
+
 
     @Override
     public String toString() {

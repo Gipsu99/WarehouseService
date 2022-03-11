@@ -51,6 +51,10 @@ public class Main {
                 pomieszczenie8, pomieszczenie9, pomieszczenie10};
 
 
+        runProgram(osoba, osoba1, info, pomieszczenia);
+
+    }
+    public static void runProgram(Osoba[] osoba, Osoba osoba1, infoDlaSkanera info, Pomieszczenia[] pomieszczenia) {
 
         int scannerA;
         int scannerB, scannerC, scannerD;
@@ -74,13 +78,13 @@ public class Main {
                 if (u == 0) {
                     System.exit(0);
                 }
-do {
-    for (int i = 0; i < osoba.length; i++) {
-        if (u == i + 1) {
-            info.wybor();
-        }
-    }
-}while(u < 0 || u > osoba.length);
+                do {
+                    for (int i = 0; i < osoba.length; i++) {
+                        if (u == i + 1) {
+                            info.wybor();
+                        }
+                    }
+                }while(u < 0 || u > osoba.length);
                 do {
                     f = sc.nextInt();
                     for(int i = 0; i < osoba.length; i++) {
@@ -90,90 +94,66 @@ do {
                                     if(u == i+1) {
                                         osoba1.daneOsoby(osoba[u - 1]);
                                         Collections.sort(osoba[u-1].listaPomieszczen);
-                                            System.out.println(osoba[u - 1].listaPomieszczen);
-                                                do {
-                                                System.out.println("Naciśnij 1, aby kontynuować.");
-                                                 scannerA = sc.nextInt();
-                                                    if (scannerA == 1) {
-                                                 info.wybor();
-                                                  }
-                                                    } while(scannerA != 1);
+                                        System.out.println(osoba[u - 1].listaPomieszczen);
+                                        do {
+                                            System.out.println("Naciśnij 1, aby kontynuować.");
+                                            scannerA = sc.nextInt();
+                                            if (scannerA == 1) {
+                                                info.wybor();
+                                            }
+                                        } while(scannerA != 1);
 
-                                                    }
-                                                  break;
-                                                case 2:
-                                                        try {
-                                                            if (u == i + 1 && a == true) {
-                                                                System.out.println("Podaj numer, którego pomieszczenia wyświetlić zawartość.");
-                                                                Collections.sort(osoba[u-1].listaPomieszczen);
-                                                                System.out.println(osoba[u - 1].listaPomieszczen);
-                                                                int tmp;
-                                                                tmp = sc.nextInt();
-                                                                if (u == i + 1) {
-                                                                    Collections.sort(pomieszczenia[tmp-1].listaPrzedmiotow);
-                                                                    System.out.println(pomieszczenia[tmp - 1].listaPrzedmiotow);
-                                                                }
-                                                                do {
-                                                                    System.out.println("Naciśnij 1, aby kontynuować.");
-                                                                    scannerA = sc.nextInt();
-                                                                    if (scannerA == 1) {
-                                                                        info.wybor();
-                                                                    }
-                                                                } while(scannerA != 1);
-                                                            } else {
-                                                                System.out.println("Nie masz wynajętego pomieszczenia.");
-                                                                do {
-                                                                    System.out.println("Naciśnij 1, aby kontynuować.");
-                                                                    scannerA = sc.nextInt();
-                                                                    if (scannerA == 1) {
-                                                                        info.wybor();
-                                                                    }
-                                                                } while(scannerA != 1);
-                                                            }
-                                                        } catch (ArrayIndexOutOfBoundsException e) {
-                                                            System.out.println("Niepoprawna liczba");
-                                                        }
+                                    }
                                     break;
-                                        case 3:
-                                            boolean s = true;
-                                            if(a == true  && osoba[u-1].listaPomieszczen.size() != 0 && osoba[u-1].listaPomieszczen.contains(osoba[u-1]) == false) {
-                                                do {
+                                case 2:
+                                    try {
+                                        if (u == i + 1 && a == true) {
+                                            System.out.println("Podaj numer, którego pomieszczenia wyświetlić zawartość.");
+                                            Collections.sort(osoba[u-1].listaPomieszczen);
+                                            System.out.println(osoba[u - 1].listaPomieszczen);
+                                            int tmp;
+                                            tmp = sc.nextInt();
+                                            if (u == i + 1) {
+                                                Collections.sort(pomieszczenia[tmp-1].listaPrzedmiotow);
+                                                System.out.println(pomieszczenia[tmp - 1].listaPrzedmiotow);
+                                            }
+                                            do {
+                                                System.out.println("Naciśnij 1, aby kontynuować.");
+                                                scannerA = sc.nextInt();
+                                                if (scannerA == 1) {
+                                                    info.wybor();
+                                                }
+                                            } while(scannerA != 1);
+                                        } else {
+                                            System.out.println("Nie masz wynajętego pomieszczenia.");
+                                            do {
+                                                System.out.println("Naciśnij 1, aby kontynuować.");
+                                                scannerA = sc.nextInt();
+                                                if (scannerA == 1) {
+                                                    info.wybor();
+                                                }
+                                            } while(scannerA != 1);
+                                        }
+                                    } catch (ArrayIndexOutOfBoundsException e) {
+                                        System.out.println("Niepoprawna liczba");
+                                    }
+                                    break;
+                                case 3:
+                                    boolean s = true;
+                                    if(a == true  && osoba[u-1].listaPomieszczen.size() != 0 && osoba[u-1].listaPomieszczen.contains(osoba[u-1]) == false) {
+                                        do {
 
-                                                    System.out.println("Wybierz pomieszczenie scannerA listy do ktorego chcesz wlozyc przedmiot:");
-                                                    if(u == i+1) {
-                                                        Collections.sort(osoba[u-1].listaPomieszczen);
-                                                        System.out.println(osoba[u-1].listaPomieszczen);
-                                                    }
+                                            System.out.println("Wybierz pomieszczenie scannerA listy do ktorego chcesz wlozyc przedmiot:");
+                                            if(u == i+1) {
+                                                Collections.sort(osoba[u-1].listaPomieszczen);
+                                                System.out.println(osoba[u-1].listaPomieszczen);
+                                            }
 
-                                                        scannerE = sc.nextInt();
-                                                            if (u == i + 1 && osoba[u-1].listaPomieszczen.size() != 0 && osoba[u-1].listaPomieszczen.contains(pomieszczenia[scannerE - 1]) == true) {
-                                                                info.wybor2();
-                                                                pomieszczenia[scannerE - 1].dodajPrzedmiotu();
-                                                                s = false;
-                                                                do {
-                                                                    System.out.println("Naciśnij 1, aby kontynuować.");
-                                                                    scannerA = sc.nextInt();
-                                                                    if (scannerA == 1) {
-                                                                        info.wybor();
-                                                                    }
-                                                                } while(scannerA != 1);
-
-                                                            } else {
-                                                                System.out.println("Te pomieszczenie nie jest twoją własnością.");
-
-                                                                    s = false;
-                                                                    do {
-                                                                        System.out.println("Naciśnij 1, aby kontynuować.");
-                                                                        scannerA = sc.nextInt();
-                                                                        if (scannerA == 1) {
-                                                                            info.wybor();
-                                                                        }
-                                                                    } while(scannerA != 1);
-                                                               // }
-                                                            }
-                                                } while (s == true);
-                            } else {
-                                System.err.println("nie masz wynajętego pomieszczenia.");
+                                            scannerE = sc.nextInt();
+                                            if (u == i + 1 && osoba[u-1].listaPomieszczen.size() != 0 && osoba[u-1].listaPomieszczen.contains(pomieszczenia[scannerE - 1]) == true) {
+                                                info.wybor2();
+                                                pomieszczenia[scannerE - 1].dodajPrzedmiotu();
+                                                s = false;
                                                 do {
                                                     System.out.println("Naciśnij 1, aby kontynuować.");
                                                     scannerA = sc.nextInt();
@@ -181,8 +161,32 @@ do {
                                                         info.wybor();
                                                     }
                                                 } while(scannerA != 1);
-                            }
-                                            break;
+
+                                            } else {
+                                                System.out.println("Te pomieszczenie nie jest twoją własnością.");
+
+                                                s = false;
+                                                do {
+                                                    System.out.println("Naciśnij 1, aby kontynuować.");
+                                                    scannerA = sc.nextInt();
+                                                    if (scannerA == 1) {
+                                                        info.wybor();
+                                                    }
+                                                } while(scannerA != 1);
+                                                // }
+                                            }
+                                        } while (s == true);
+                                    } else {
+                                        System.err.println("nie masz wynajętego pomieszczenia.");
+                                        do {
+                                            System.out.println("Naciśnij 1, aby kontynuować.");
+                                            scannerA = sc.nextInt();
+                                            if (scannerA == 1) {
+                                                info.wybor();
+                                            }
+                                        } while(scannerA != 1);
+                                    }
+                                    break;
                                 case 4:
                                     s = true;
                                     if(a == true && osoba[u-1].listaPomieszczen.size() != 0 && osoba[u-1].listaPomieszczen.contains(osoba[u-1]) == false) {
@@ -200,14 +204,14 @@ do {
                                                 if (u == i + 1 && osoba[u-1].listaPomieszczen.size() != 0 && osoba[u-1].listaPomieszczen.contains(pomieszczenia[scannerE - 1]) == true) {
                                                     pomieszczenia[scannerE -1].wyjmijPrzedmiot();
 
-                                                        s = false;
-                                                        do {
-                                                            System.out.println("Naciśnij 1, aby kontynuować.");
-                                                            scannerA = sc.nextInt();
-                                                            if (scannerA == 1) {
-                                                                info.wybor();
-                                                            }
-                                                        } while(scannerA != 1);
+                                                    s = false;
+                                                    do {
+                                                        System.out.println("Naciśnij 1, aby kontynuować.");
+                                                        scannerA = sc.nextInt();
+                                                        if (scannerA == 1) {
+                                                            info.wybor();
+                                                        }
+                                                    } while(scannerA != 1);
                                                 }
                                             } catch (ArrayIndexOutOfBoundsException e) {
                                                 System.err.println("Niepoprawna liczba");
@@ -226,49 +230,49 @@ do {
                                     break;
                                 case 5:
                                     try {
-                                    if(u == i+1) {
-                                        System.out.println("wyswietl wolne pomieszczenia");
-                                        Collections.sort(osoba1.listaPomieszczen);
-                                        osoba1.wolnePomieszczenia(osoba1.listaPomieszczen);
-                                        do {
-                                            System.out.println("Naciśnij 1, aby kontynuować.");
-                                            scannerA = sc.nextInt();
-                                            if (scannerA == 1) {
-                                                info.wybor();
-                                            }
-                                        } while(scannerA != 1);
-                                    }
+                                        if(u == i+1) {
+                                            System.out.println("wyswietl wolne pomieszczenia");
+                                            Collections.sort(osoba1.listaPomieszczen);
+                                            osoba1.wolnePomieszczenia(osoba1.listaPomieszczen);
+                                            do {
+                                                System.out.println("Naciśnij 1, aby kontynuować.");
+                                                scannerA = sc.nextInt();
+                                                if (scannerA == 1) {
+                                                    info.wybor();
+                                                }
+                                            } while(scannerA != 1);
+                                        }
                                     }catch (ArrayIndexOutOfBoundsException e) {
                                         System.err.println("Niepoprawna liczba");
                                     }
                                     break;
                                 case 6:
                                     try{
-                                    if(u == i+1) {
-                                    System.out.println("Podaj numer pomieszczenia które chcesz wynająć");
-                                        Collections.sort(osoba1.listaPomieszczen);
-                                    osoba1.wolnePomieszczenia(osoba1.listaPomieszczen);
-                                    scannerB = sc.nextInt();
+                                        if(u == i+1) {
+                                            System.out.println("Podaj numer pomieszczenia które chcesz wynająć");
+                                            Collections.sort(osoba1.listaPomieszczen);
+                                            osoba1.wolnePomieszczenia(osoba1.listaPomieszczen);
+                                            scannerB = sc.nextInt();
                                             if(u == i+1 ) {
                                                 osoba[u-1].wynajmij(pomieszczenia[scannerB -1]);
                                                 a = true;
                                             }
-                                        a = true;
-                                        do {
-                                            System.out.println("Naciśnij 1, aby kontynuować.");
-                                            scannerA = sc.nextInt();
-                                            if (scannerA == 1) {
-                                                info.wybor();
-                                            }
-                                        } while(scannerA != 1);
+                                            a = true;
+                                            do {
+                                                System.out.println("Naciśnij 1, aby kontynuować.");
+                                                scannerA = sc.nextInt();
+                                                if (scannerA == 1) {
+                                                    info.wybor();
+                                                }
+                                            } while(scannerA != 1);
                                         }
                                     }catch (ArrayIndexOutOfBoundsException e) {
                                         System.err.println("Niepoprawna liczba");
                                     }
                                     break;
                                 case 7:
-                                        osoba[u-1].zapisanie(osoba1.listaOsob, osoba1.listaPomieszczen);
-                                        System.exit(0);
+                                    osoba[u-1].zapisanie(osoba1.listaOsob, osoba1.listaPomieszczen);
+                                    System.exit(0);
                                     break;
                                 case 8:
                                     do {
@@ -361,4 +365,5 @@ do {
             System.err.println("Niepodano numeru. Wyłączanie programu.");
         }
     }
+
 }

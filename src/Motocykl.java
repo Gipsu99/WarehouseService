@@ -10,11 +10,7 @@ public class Motocykl extends Przedmiot {
         this.powierzchnia = powierzchnia;
         this.homologacja = homologacja;
     }
-    public Motocykl(String nazwa, boolean homologacja) {
-        super(nazwa);
-        this.nazwa = nazwa;
-        this.homologacja = homologacja;
-    }
+
     public String toString() {
         return "nazwa: " + nazwa + ", powierzchnia: " + getPowierzchnia() + ", homologacja: " + homologacja;
     }

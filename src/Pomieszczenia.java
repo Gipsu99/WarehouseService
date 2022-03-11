@@ -32,17 +32,13 @@ public class Pomieszczenia implements Comparable<Pomieszczenia> {
         this.wynajete = wynajete;
     }
 
-    public int getDodawanie() {
-        return dodawanie;
-    }
+
 
     public String toString() {
         return "id: " + id + ", rozmiar: " + powierzchnia + " metrów sześciennych.";
     }
 
-    public int getPowierzchnia() {
-        return powierzchnia;
-    }
+
 
 
     public void dodajPrzedmiotu() {

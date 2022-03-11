@@ -10,11 +10,7 @@ public class Rower extends Przedmiot {
         this.powierzchnia = powierzchnia;
         this.liczbaPrzerzutek = liczbaPrzerzutek;
     }
-    public Rower(String nazwa, int liczbaPrzerzutek) {
-        super(nazwa);
-        this.nazwa = nazwa;
-        this.liczbaPrzerzutek = liczbaPrzerzutek;
-    }
+
     public String toString() {
         return  "nazwa: " + nazwa + ", powierzchnia: " + getPowierzchnia() + ", liczba przerzutek: " + liczbaPrzerzutek;
     }

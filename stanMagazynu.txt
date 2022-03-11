@@ -1,0 +1,19 @@
+Osoby i pomieszczenia ich: 
+Jan Kowalski [id: 6, rozmiar: 15 metrów sześciennych., id: 4, rozmiar: 16 metrów sześciennych.]
+Tomasz Skonieczny []
+Andrzej Zawada []
+Krzysztof Nowak []
+Piotr Zieliński []
+Piotr Grzelczak []
+
+Lista pomieszczeń i przedmiotów w nich: 
+id: 6, rozmiar: 15 metrów sześciennych. []
+id: 4, rozmiar: 16 metrów sześciennych. []
+id: 10, rozmiar: 18 metrów sześciennych. []
+id: 2, rozmiar: 22 metrów sześciennych. []
+id: 3, rozmiar: 23 metrów sześciennych. []
+id: 7, rozmiar: 23 metrów sześciennych. []
+id: 8, rozmiar: 27 metrów sześciennych. []
+id: 1, rozmiar: 28 metrów sześciennych. []
+id: 9, rozmiar: 32 metrów sześciennych. []
+id: 5, rozmiar: 40 metrów sześciennych. []
